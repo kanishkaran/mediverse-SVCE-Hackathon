@@ -1,0 +1,34 @@
+{% extends 'users/layout.html' %}
+
+{% load static %}
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="card login-card">
+      <div class="row no-gutters">
+        <div class="col-md-5">
+          <img src="{% static 'users/loginart.jpg' %}" alt="login" class="login-card-img">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <div class="brand-wrapper">
+              <img src="{% static 'users/mediverse_logo.svg' %}" alt="logo" class="logo">
+            </div>
+                    <p class="login-card-description">Your personal pharmacist</p>
+                        
+                        <a href="{% url 'users:login' %}" class="btn btn-block login-btn mb-4">Login</a>
+                        <a href="{% url 'users:register' %}" class="btn btn-block login-btn mb-4">Register</a>
+                    <!-- <nav class="login-card-footer-nav">
+                            <a href="#!">Terms of use.</a>
+                            <a href="#!">Privacy policy</a>
+                        </nav> -->
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+{% endblock %}
+

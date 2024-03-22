@@ -1,0 +1,63 @@
+{% extends 'users/layout.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="{% static 'users/loginart.jpg' %}" alt="login" class="login-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <a href="{% url 'users:index' %}" class="brand-wrapper">
+                <img src="{% static 'users/mediverse_logo.svg' %}" alt="logo" class="logo">
+              </a>
+              <p class="login-card-description">Log into your account</p>
+              <form method="POST">
+                {% csrf_token %}
+                
+                  <div class="form-group">
+                    <h6 class="text-dark">Username :</h6>
+                    {{ form.username | add_class:"form-control" }}
+                    <!-- <input type="email" name="email" id="email" class="form-control" placeholder="Email address"> -->
+                  </div>
+                  <div class="form-group mb-4">
+                    <h6 class="text-dark">Password :</h6>
+                    {{ form.password | add_class:"form-control" }}
+                    <!-- <input type="password" name="password" id="password" class="form-control" placeholder="***********"> -->
+                  </div>
+                  <button class="btn btn-block login-btn mb-4" type="submit">Login</button>
+                </form>
+                <p class="login-card-footer-text">Don't have an account? <a href="{% url 'users:register' %}">Register here</a></p>
+                
+                <!-- <nav class="login-card-footer-nav">
+                  <a href="#!">Terms of use.</a>
+                  <a href="#!">Privacy policy</a>
+                </nav> -->
+            </div>
+          </div>
+        </div>
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}    
+      </div>
+    </div>
+        
+    </form>
+{% endblock %}
+
