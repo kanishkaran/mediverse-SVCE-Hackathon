@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .chatbot import response_chatbot
+from .chat import get_response
 from .forms import ChatbotForm
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
@@ -27,7 +27,7 @@ def index(request):
             # if image_file:
                 # image_text = image_to_text(image_file)
                 # chat_history.append(f"Image Text: {image_text}")
-            chatbot_response = response_chatbot(user_input)
+            chatbot_response = get_response(user_input)
             if isinstance(chatbot_response, list):
                 ChatHistory.objects.create(
                     user=request.user, 
