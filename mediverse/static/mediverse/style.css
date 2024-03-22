@@ -1,0 +1,48 @@
+/* Custom CSS for the chat UI */
+.chatbot-response {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+    .chatbot-response {
+        max-height: 200px; /* Adjust max-height for very small screens */
+    }
+}
+
+/* Media query for medium screens */
+@media (min-width: 576px) and (max-width: 992px) {
+    .chatbot-response {
+        max-height: 300px; /* Adjust max-height for medium screens */
+    }
+}
+
+/* Media query for large screens */
+@media (min-width: 992px) {
+    .chatbot-response {
+        max-height: 500px; /* Adjust max-height for large screens */
+    }
+}
+
+.user-message {
+    text-align: right;
+    margin-right: 12px;
+}
+
+.mediverse-message {
+    text-align: left;
+}
+
+.chat-input-form {
+    width: 100%; /* Make the input field container as wide as the chat card */
+}
+
+.chat-input-form .input-group {
+    width: 100%; /* Make the input field as wide as the container */
+    color: chocolate;
+}
+
+.chat-input-form .form-control {
+    width: 100%; /* Make the input field itself as wide as the container */
+}    
