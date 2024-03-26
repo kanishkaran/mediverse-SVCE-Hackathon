@@ -1,0 +1,38 @@
+{ "intents": [
+    {
+        "tags":"order",
+        "patterns": ["i would like to order paracetamol?", "i would like to order Ibuprofen", "i would like to order Aspirin", "i would like to order Omeprazole", "i want paracetamol", "want Omeprazole", "want Metformin", "i want Ciprofloxacin", "i want Aspirin", "Give me Aspirin", "give me Metformin", "give me paracetamol", "give me Ibuprofen", "give Aspirin", "give Ibuprofen", "give paracetamol", "give Ciprofloxacin", "order Omeprazole", "give Omeprazole", "give me Aspirin", "give me the medicines", "please give Omeprazole", "please give Aspirin", "please give paracetamol", "please give Ciprofloxacin", "i require Ibuprofen", "i require Ciprofloxacin", "i require paracetamol", "i require Aspirin" ]
+    },
+    {
+        "tags": "alternative",
+        "patterns": ["What is the alternative of Ibuprofen?", "What is the alternative of Paracetamol?", "What is the alternative of Aspirin?", "What is the alternative of Amoxicillin?", "What is the alternative of Ciprofloxacin?", "What is the alternative of Atorvastatin?", "What is the alternative of Lisinopril?", "What is the alternative of Metformin?", "What is the alternative of Prozac?", "What is the alternative of Azithromycin?", "give the alternative of Ibuprofen?", "give the alternative of Paracetamol?", "give the alternative of Aspirin?", "give the alternative of Amoxicillin?", "give the alternative of Ciprofloxacin?", "give the alternative of Atorvastatin?", "give the alternative of Lisinopril?", "give the alternative of Metformin?", "give the alternative of Prozac?", "give the alternative of Azithromycin?", " is there alternative for Ibuprofen?", " is there alternative for Paracetamol?", " is there alternative for Aspirin?", " is there alternative for Amoxicillin?", " is there alternative for Ciprofloxacin?", " is there alternative for Atorvastatin?", " is there alternative for Lisinopril?", " is there alternative for Metformin?", " is there alternative for Prozac?", " is there alternative for Azithromycin?", "something other than Ibuprofen?", "something other than Paracetamol?", "something other than Aspirin?", "something other than Amoxicillin?", "something other than Ciprofloxacin?", "something other than Atorvastatin?", "something other than Lisinopril?", "something other than Metformin?", "something other than Prozac?", "something other than Azithromycin?", "anything else other than Ibuprofen?", "anything else other than Paracetamol?", "anything else other than Aspirin?", "anything else other than Amoxicillin?", "anything else other than Ciprofloxacin?", "anything else other than Atorvastatin?", "anything else other than Lisinopril?", "anything else other than Metformin?", "anything else other than Prozac?", "anything else other than Azithromycin?"]
+
+    },
+    {
+        "tags": "whatMed",
+        "patterns": ["what are the medicines for Fever?", "what are the medicines for Pain relief?", "what are the medicines for Bacterial infections?", "what are the medicines for Ulcers?", "what are the medicines for High blood pressure?", "what are the medicines for High cholesterol?", "what are the medicines for Inflammation?", "what are the medicines for Asthma?", "what are the medicines for Anxiety?", "what are the medicines for Depression?", "what are the medicines for Schizophrenia?", "what are the medicines for Panic disorder?", "what are the medicines for Allergies?", "solutions forFever?", "solutions forPain relief?", "solutions forBacterial infections?", "solutions forUlcers?", "solutions forHigh blood pressure?", "solutions forHigh cholesterol?", "solutions forInflammation?", "solutions forAsthma?", "solutions forAnxiety?", "solutions forDepression?", "solutions forSchizophrenia?", "solutions forPanic disorder?", "solutions forAllergies?"]
+    },
+    {
+        "tags" : "greetings",
+        "patterns": ["hey", "hello", "good day", "hey there", "whats up", "how is it going", "good day", "nice to meet you", "g'day", "Good to see you", "great to see you","its nice to see you"]
+    },
+    {
+        "tags": "name",
+        "patterns": ["who are you", "your name", "do you have a name", "what is your name", "what do people call you", "nam", "what is your name"]
+    },
+    {
+    
+        "tags": "unknown",
+        "patterns": ["Sorry, I don't understand.", "I'm not sure what you mean.", "Could you please rephrase that?"],
+        "responses": ["I apologize, but I'm not trained to understand that. Can you provide more context or ask another question?"]
+    },
+    {
+        "tags": "goodbye",
+        "patterns": ["Goodbye", "Bye", "See you later", "Take care"]
+    },
+    {
+      "tags": "thanks",
+      "patterns": ["Thank you", "Thanks", "Appreciate it"]
+    }
+    
+]}
