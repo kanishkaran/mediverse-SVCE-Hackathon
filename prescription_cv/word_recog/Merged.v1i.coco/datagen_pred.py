@@ -37,9 +37,9 @@ def load_annotations(data_dir):
     return image_info, category_map
 
 # Load the data
-train_image_info, category_map = load_annotations(r'D:\code\hackathon\word_recog\Merged.v1i.coco\train')
-val_image_info, _ = load_annotations(r'D:\code\hackathon\word_recog\Merged.v1i.coco\valid')
-test_image_info, _ = load_annotations(r'D:\code\hackathon\word_recog\Merged.v1i.coco\test')
+train_image_info, category_map = load_annotations(r'word_recog\Merged.v1i.coco\train')
+val_image_info, _ = load_annotations(r'word_recog\Merged.v1i.coco\valid')
+test_image_info, _ = load_annotations(r'word_recog\Merged.v1i.coco\test')
 
 # Define the model
 model = keras.models.Sequential([
@@ -57,7 +57,7 @@ model = keras.models.Sequential([
 train_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_dictionary(
     train_image_info,
-    directory=r'D:\code\hackathon\word_recog\Merged.v1i.coco\train',
+    directory=r'word_recog\Merged.v1i.coco\train',
     target_size=(224, 224),
     batch_size=32,
     shuffle=True
@@ -66,7 +66,7 @@ train_generator = train_datagen.flow_from_dictionary(
 val_datagen = ImageDataGenerator(rescale=1./255)
 val_generator = val_datagen.flow_from_dictionary(
     val_image_info,
-    directory=r'D:\code\hackathon\word_recog\Merged.v1i.coco\valid',
+    directory=r'word_recog\Merged.v1i.coco\valid',
     target_size=(224, 224),
     batch_size=32,
     shuffle=False
@@ -92,7 +92,7 @@ def load_and_preprocess_image(image_path):
     image_array = tf.keras.applications.mobilenet_v2.preprocess_input(image_array)
     return image_array
 
-new_image = load_and_preprocess_image(r"D:\code\hackathon\test_sample_images\test09.png")
+new_image = load_and_preprocess_image(r"test_sample_images\test09.png")
 predictions = loaded_model.predict(np.expand_dims(new_image, axis=0))
 
 # Interpret predictions
