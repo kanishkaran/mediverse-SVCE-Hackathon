@@ -74,7 +74,7 @@ input_shape = (640, 640, 3)  # Example input shape
 num_classes = 1445  # Example number of classes
 
 # Load dataset
-base_path = r'D:\code\hackathon\word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\renamed'
+base_path = r'word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\renamed'
 split = 'train'  # Choose 'train', 'test', or 'valid'
 json_file_path = os.path.join(base_path, split, 'updated_coco.json')
 dataset = load_images_and_annotations(json_file_path)
