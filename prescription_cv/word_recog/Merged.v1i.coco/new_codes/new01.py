@@ -51,9 +51,8 @@ def convert_annotations_to_tensors(annotations, categories):
     return torch.stack(annotation_tensors)
 
 # Define paths to dataset and annotations
-dataset_dir = r'D:\code\hackathon\word_recog\Merged.v1i.coco\new_codes\dset_rnamed\renamed'
+dataset_dir = r'word_recog\Merged.v1i.coco\new_codes\dset_rnamed\renamed'
 
-# Define paths to JSON files for train, test, and valid sets
 # Define paths to JSON files for train, test, and valid sets
 train_json_file = 'train/updated_coco.json'
 test_json_file = 'test/updated_coco.json'
@@ -74,13 +73,6 @@ valid_annotations = load_annotations(os.path.join(dataset_dir, valid_json_file))
 print("Loaded train annotations:", train_annotations)
 print("Loaded test annotations:", test_annotations)
 print("Loaded valid annotations:", valid_annotations)
-
-
-
-# Preprocess images for train, test, and valid sets
-# train_data = preprocess_images(os.path.join(dataset_dir, 'train'), train_annotations, grayscale=True)
-# test_data = preprocess_images(os.path.join(dataset_dir, 'test'), test_annotations, grayscale=True)
-# valid_data = preprocess_images(os.path.join(dataset_dir, 'valid'), valid_annotations, grayscale=True)
 
 # Extract categories from annotations
 categories = train_annotations['categories']  # Assuming categories are the same across train, test, and valid sets
