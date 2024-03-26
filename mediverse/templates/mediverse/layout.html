@@ -10,9 +10,10 @@
 </head>
 </head>
     <body>
+        {% block navbar %}
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid justify-content-between">
-                <a class="navbar-brand" href="{% url 'mediverse:index' %}">
+                <a class="navbar-brand" href="{% url 'users:index' %}">
                     <img src="{% static 'mediverse/logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
                     Mediverse   
                 </a>
@@ -20,6 +21,7 @@
                 {% endblock %}
             </div>
         </nav>
+        {% endblock %}
             {% block main %}
             {% endblock %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

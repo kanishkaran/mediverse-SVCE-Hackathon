@@ -1,7 +1,26 @@
 from django.db import models
 from django.conf import settings
 import json
-
+def get_medicine_details(medicine_name):
+    try:
+        # Query the Medicine model to get the medicine details
+        medicine = Medicine.objects.get(name=medicine_name)
+        
+        # Query the Inventory model to get the price and quantity details
+        inventory = Inventory.objects.get(medicine=medicine)
+        
+        # Build the medicine details string using f-strings
+        medicine_detail = f"Details for {medicine.name}:\n"
+        medicine_detail += f"Price: ₹{inventory.price}\n"
+        medicine_detail += f"Uses: {medicine.uses}\n"
+        medicine_detail += f"Side Effects: {medicine.side_effects}\n"
+        medicine_detail += f"Quantity Available: {inventory.quantity}\n"
+        
+        return medicine_detail
+    except Medicine.DoesNotExist:
+        return f"Medicine '{medicine_name}' not found in the database."
+    except Inventory.DoesNotExist:
+        return f"Inventory details not found for medicine '{medicine_name}'."
 class ChatHistory(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     user_input = models.TextField()

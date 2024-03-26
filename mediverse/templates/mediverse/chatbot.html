@@ -1,20 +1,25 @@
 {% extends 'mediverse/layout.html' %}
 {% load static %}
 {% load custom_filters %}
+{% load widget_tweaks %}
 
 {% block title %}
 Mediverse
 {% endblock %}
 
 {% block clear_chat %}
-<button type="button" class="btn btn-danger" onclick="confirmClearChatHistory()">Clear Chat</button>
+<form id="clearChatForm" action="{% url 'mediverse:clear_chat_history' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" id="clearConfirmation" name="clear_confirmation" value="0"> 
+    <button type="button" class="btn btn-danger" onclick="confirmClearChatHistory()">Clear </button>
+</form>
 {% endblock %}
 
 {% block main %}
-
-<main class="container mt-4">
+<link rel="stylesheet" href="{% static 'mediverse/chatstyle.css' %}">
+<main class="container">
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-xl-12">
             <!-- Display chatbot response -->
             <div class="chatbot-response">
                 {% for message in chat_history %}
@@ -30,30 +35,21 @@ Mediverse
                                 {% endfor %}
                             </ul>
                         {% else %}
-                            {{ message.chatbot_response_str }}
+                            {{ message.chatbot_response_str | safe }}
                         {% endif %}
                     </div>
                 {% endfor %}
             </div>
-
-            <form id="clearChatForm" action="{% url 'mediverse:clear_chat_history' %}" method="post">
-                {% csrf_token %}
-                <input type="hidden" id="clearConfirmation" name="clear_confirmation" value="0"> 
-                <!-- <button type="button" class="btn btn-danger mt-3" onclick="confirmClearChatHistory()">Clear Chat History</button> Use button type instead of submit -->
-            </form>
-
-            <!-- Chatbot form -->
-            <form method="post" action="{% url 'mediverse:index' %}" class="mt-3 chat-input-form">
-                {% csrf_token %}
-                <div class="input-group">
-                    {{ form.user_input }}
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </div>  
-                </div>
-            </form>
         </div>
     </div>
+    <form method="post" action="{% url 'mediverse:index' %}" class="mt-3 chat-input-form">
+        <div class="input-group">
+            {{ form.user_input | add_class:"form-control" }}
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>  
+        </div>
+    </form>
 </main>
 
 <script>
@@ -63,6 +59,9 @@ Mediverse
             document.getElementById("clearChatForm").submit(); // Submit the form
         }
     }
+    // Set default scroll to bottom
+    document.querySelector('.chatbot-response').scrollTop = document.querySelector('.chatbot-response').scrollHeight;
 </script>
 
 {% endblock %}
+

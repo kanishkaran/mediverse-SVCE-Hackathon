@@ -1,10 +1,52 @@
 {% extends 'mediverse/layout.html' %}
 
+{% load custom_filters %}
+
 {% block title %}
-    Medicine Detail
+    Order {{ medicine_detail.name }}
 {% endblock %}
 
 {% block main %}
-    <h1>Medicine Detail</h1>
-    <p>{{ medicine_detail }}</p> 
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                {{ medicine_detail.name }}
+            </div>
+            <div class="card-body">
+                {% if medicine_detail %}
+                    <p class="card-text"><strong>Price:</strong> ₹{{ medicine_detail.price }}</p>
+                    <p class="card-text"><strong>Uses:</strong> {{ medicine_detail.uses }}</p>
+                    <p class="card-text"><strong>Side Effects:</strong> {{ medicine_detail.side_effects }}</p>
+                    <p class="card-text"><strong>Quantity Available:</strong> {{ medicine_detail.quantity }}</p>
+                {% else %}
+                    <p class="text-danger">Medicine details not found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <form id="paymentForm" action="{% url 'mediverse:payment' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="medicine_id" value="{{ medicine_detail.id|convert_to_int }}">
+        <input type="hidden" name="quantity" id="quantityInput" value="1">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="quantityLabel">Quantity</span>
+                        </div>
+                        <input type="number" class="form-control" aria-label="Quantity" aria-describedby="quantityLabel" min="1" max="{{ medicine_detail.quantity|convert_to_int }}" onchange="updateQuantity(this)">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        function updateQuantity(input) {
+            document.getElementById('quantityInput').value = input.value;
+        }
+    </script>
 {% endblock %}

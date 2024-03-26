@@ -1,4 +1,4 @@
-def response_chatbot(text):
+def get_response(text):
     if 'medi' in text.lower():
         # Assuming you have a list of medicines
         medicines = ['Medicine A', 'Medicine B', 'Medicine C']
