@@ -6,7 +6,7 @@ Welcome to Mediverse, a chatbot designed to help you order medicine online conve
 
 To run the program, follow these steps:
 
-1. **Set Your API Key:**
+1. **Set Your Own API Key:**
    - Open [chatbot_resource/chat.py](https://github.com/tharun52/mediverse1/blob/bf4d3a1b751a91f9b7e8fe35314ce298767de846/chatbot_resource/chat.py) file.
    - Replace `GEMINI API KEY` with your own API key.
 
