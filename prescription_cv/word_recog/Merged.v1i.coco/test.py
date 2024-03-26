@@ -43,9 +43,9 @@ def load_data(data_dir):
     return np.array(images), np.array(boxes, dtype=np.float32), np.array(labels)
 
 # Load the data
-train_images, train_boxes, train_labels = load_data(r'D:\code\hackathon\word_recog\Merged.v1i.coco\train')
-val_images, val_boxes, val_labels = load_data(r'D:\code\hackathon\word_recog\Merged.v1i.coco\valid')
-test_images, test_boxes, test_labels = load_data(r'D:\code\hackathon\word_recog\Merged.v1i.coco\test')
+train_images, train_boxes, train_labels = load_data(r'word_recog\Merged.v1i.coco\train')
+val_images, val_boxes, val_labels = load_data(r'word_recog\Merged.v1i.coco\valid')
+test_images, test_boxes, test_labels = load_data(r'word_recog\Merged.v1i.coco\test')
 
 # Define the model
 model = keras.models.Sequential([
@@ -78,7 +78,7 @@ def load_and_preprocess_image(image_path):
     image_array = tf.keras.applications.mobilenet_v2.preprocess_input(image_array)
     return image_array
 
-new_image = load_and_preprocess_image(r"D:\code\hackathon\test_sample_images\test09.png")
+new_image = load_and_preprocess_image(r"test_sample_images\test09.png")
 predictions = loaded_model.predict(np.expand_dims(new_image, axis=0))
 
 # Interpret predictions
