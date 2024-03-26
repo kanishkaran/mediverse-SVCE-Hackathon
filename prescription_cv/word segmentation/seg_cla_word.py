@@ -34,7 +34,7 @@ def segment_words(img):
     return word_images
 
 # Load the handwritten image
-image = cv2.imread(r'D:\code\hackathon\test_sample_images\test06.png')
+image = cv2.imread(r'test06.png') #avoid raw strings, image path goes here
 
 # Preprocess the image
 preprocessed = preprocess(image)
