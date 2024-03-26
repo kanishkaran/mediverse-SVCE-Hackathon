@@ -36,7 +36,7 @@ def rename_images_and_update_json(json_file_path, output_dir, images_dir):
     print(f'Renamed {len(images)} images and updated JSON file: {output_json_path}')
 
 # Example usage
-json_file_path = r'D:\code\hackathon\word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\original\valid\_annotations.coco.json'
-output_dir = r'D:\code\hackathon\word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\renamed\valid'
-images_dir = r'D:\code\hackathon\word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\original\valid'
+json_file_path = r'word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\original\valid\_annotations.coco.json' #deleted, the files referring to the dataset downloaded from roboflow universe in json coco format
+output_dir = r'word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\renamed\valid'
+images_dir = r'word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\original\valid'
 rename_images_and_update_json(json_file_path, output_dir, images_dir)
