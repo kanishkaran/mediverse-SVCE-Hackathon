@@ -15,7 +15,7 @@ def detect_handwritten_text(image_path):
     return detected_text
 
 # Path to your handwritten image
-image_path = r'D:\code\hackathon\word_recog\doc_digit.jpg'
+image_path = r'image path goes here' #note: u should prolly go for os.path rather than raw string to maintain best practices...
 
 # Detect handwritten text
 detected_text = detect_handwritten_text(image_path)
