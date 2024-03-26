@@ -25,7 +25,7 @@ def segment_words(image, text_regions):
 
 def main():
     # Load image
-    img_path = r"D:\code\hackathon\test_sample_images\Screenshot 2024-03-16 224527.png"
+    img_path = r"Screenshot 2024-03-16 224527.png" #avoid using raw string, image path goes here
     image = cv2.imread(img_path)
 
     # Preprocess image
