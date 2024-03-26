@@ -120,7 +120,7 @@ def preprocess_data(image, annotations):
     return image, annotations
 
 # Example usage
-base_path = r'D:\code\hackathon\word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\renamed'
+base_path = r'word_recog\Merged.v1i.coco\new_codes\dataset_rname_test\renamed'
 
 # Load data and calculate unique classes
 train_data = []
