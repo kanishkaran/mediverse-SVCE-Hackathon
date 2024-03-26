@@ -146,7 +146,7 @@ model = Model(inputs=[input_data, labels, input_length, label_length], outputs=l
 #testing
 test_images_processed = []
 
-test_image_path = r"D:\code\hackathon\test_sample_images\Screenshot 2024-03-16 224527.png"
+test_image_path = r"Screenshot 2024-03-16 224527.png" #image path goes here # avoid using raw string as suggested in other files, same thing again
 
 temp_processed_image = preprocess(path=test_image_path, img_w=128, img_h=64)
 test_images_processed.append(temp_processed_image.T)
@@ -166,7 +166,7 @@ test_images_processed = test_images_processed.reshape(-1, 128, 64, 1)
 iam_model_pred = Model(inputs=input_data, outputs=iam_outputs)
 # iam_model_pred.summary()
 
-iam_model_pred.load_weights(filepath=r'D:\code\hackathon\IAM_30epoch\gru-model-after-4th-session.h5')
+iam_model_pred.load_weights(filepath=r'gru-model-after-4th-session.h5') #trained model's path, #refer the other repo credited in the readme or in the folder in curr directory of repo
 test_predictions_encoded = iam_model_pred.predict(x=test_images_processed)
 test_predictions_encoded.shape
 
