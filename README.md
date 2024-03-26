@@ -7,7 +7,7 @@ Welcome to Mediverse, a chatbot designed to help you order medicine online conve
 To run the program, follow these steps:
 
 1. **Set Your API Key:**
-   - Open `chatbot_resource/chat.py` file.
+   - Open chatbot_resource/chat.py file.
    - Replace `GEMINI API KEY` with your own API key.
 
 2. **Install Requirements:**
@@ -28,9 +28,7 @@ To run the program, follow these steps:
      ```
      python manage.py createsuperuser
      ```
-   - Login to the admin panel at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
+   - Login to the admin panel at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) after running the server.
 
 ## Note
 You may want to modify the inventory table in the admin panel since dummy data is used for example purposes.
-
-Feel free to explore and customize Mediverse for your needs!
