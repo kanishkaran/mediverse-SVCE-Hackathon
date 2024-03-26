@@ -41,7 +41,7 @@ def parse_coco_json(json_file_path):
     return image_data
 
 # Example usage
-json_file_path = r'D:\code\hackathon\word_recog\Merged.v1i.coco\train\_annotations.coco.json'
+json_file_path = r'word_recog\Merged.v1i.coco\train\_annotations.coco.json'
 parsed_data = parse_coco_json(json_file_path)
 
 # Print parsed data
