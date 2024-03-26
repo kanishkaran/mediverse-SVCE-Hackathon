@@ -56,9 +56,9 @@ def create_dataset(image_info, batch_size=32, shuffle=False):
     return dataset
 
 # Load the data for train, validation, and test sets
-train_image_info, category_map = load_annotations(r'D:\code\hackathon\word_recog\Merged.v1i.coco\train')
-val_image_info, _ = load_annotations(r'D:\code\hackathon\word_recog\Merged.v1i.coco\valid')
-test_image_info, _ = load_annotations(r'D:\code\hackathon\word_recog\Merged.v1i.coco\test')
+train_image_info, category_map = load_annotations(r'word_recog\Merged.v1i.coco\train')
+val_image_info, _ = load_annotations(r'word_recog\Merged.v1i.coco\valid')
+test_image_info, _ = load_annotations(r'word_recog\Merged.v1i.coco\test')
 
 # Create datasets
 train_dataset = create_dataset(train_image_info, batch_size=32, shuffle=True)
@@ -102,7 +102,7 @@ def load_and_preprocess_image(image_path):
     image = tf.keras.applications.mobilenet_v2.preprocess_input(image)
     return image
 
-new_image = load_and_preprocess_image(r"D:\code\hackathon\test_sample_images\test09.png")
+new_image = load_and_preprocess_image(r"test_sample_images\test09.png")
 predictions = loaded_model.predict(tf.expand_dims(new_image, axis=0))
 
 # Interpret predictions
