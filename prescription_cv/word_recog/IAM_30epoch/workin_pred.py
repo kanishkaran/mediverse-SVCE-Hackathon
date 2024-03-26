@@ -315,7 +315,7 @@ import pandas as pd
 # ## predictions on test set and calculating WER & CER
 
 # %%
-test_image_path = r"D:\code\hackathon\word_recog\IAM_30epoch\word_recog(look yoinked colab)\some images\g07-038-01-02.png"
+test_image_path = r"image path goes here" #avoid using raw string use os library instead
 
 # %% [markdown]
 # make predictions using weights from various checkpoints, since that's the epoch with lowest train and validation error.
@@ -360,7 +360,7 @@ iam_model_pred = Model(inputs=input_data, outputs=iam_outputs)
 iam_model_pred.summary()
 
 # %%
-iam_model_pred.load_weights(filepath=r'D:\code\hackathon\word_recog\IAM_30epoch\gru-model-after-4th-session.h5')
+iam_model_pred.load_weights(filepath=r'gru-model-after-4th-session.h5') #again avoid using raw string #model path goes here #referred code from other repo for this, look in readme
 
 # %%
 test_predictions_encoded = iam_model_pred.predict(x=test_images_processed)
