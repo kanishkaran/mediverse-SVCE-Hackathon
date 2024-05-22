@@ -32,3 +32,12 @@ To run the program, follow these steps:
 
 ## Note
 You may want to modify the inventory table in the admin panel since dummy data is used for example purposes.
+
+
+
+![login](https://github.com/tharun52/mediverse1/blob/a78109958c07dc2c18b5865daffc06fe7a157543/images/login.png) <br>
+![register](https://github.com/tharun52/mediverse1/blob/a78109958c07dc2c18b5865daffc06fe7a157543/images/register.png)   <br>
+![admin](https://github.com/tharun52/mediverse1/blob/a78109958c07dc2c18b5865daffc06fe7a157543/images/admin.png)<br>
+![chat](https://github.com/tharun52/mediverse1/blob/a78109958c07dc2c18b5865daffc06fe7a157543/images/chat.png)<br>
+![order](https://github.com/tharun52/mediverse1/blob/a78109958c07dc2c18b5865daffc06fe7a157543/images/order.png)<br>
+![payment](https://github.com/tharun52/mediverse1/blob/a78109958c07dc2c18b5865daffc06fe7a157543/images/payment.png)<br>
